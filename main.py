@@ -10,7 +10,7 @@ from datetime import timedelta
 # Carrega os tickers do arquivo CSV e adiciona o sufixo ".SA" pra acessar via Yahoo Finance
 @st.cache_data
 def carregar_tickers_acoes():
-    base_tickers = pd.read_csv(r"C:\Users\Lucas\OneDrive\Arquivos diversos\Desktop\dashboard com stream\IBOV (1).csv", sep=";")
+    base_tickers = pd.read_csv("IBOV (1).csv", sep=";")
     tickers = [f"{item}.SA" for item in base_tickers["Código"].tolist()]
     return tickers
 
